@@ -18,7 +18,7 @@ login.onclick = function(event) {
 
 
     loginredirect.setAttribute("http-equiv", "refresh");
-    loginredirect.setAttribute("content", "2;url=index.html"); 
+    loginredirect.setAttribute("content", "2;url=questionnaire.html"); 
 
     loginhead.appendChild(loginredirect);
 

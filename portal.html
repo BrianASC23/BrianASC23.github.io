@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="data.js" defer></script>
-    <script src="portal.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="Diseases.js" defer></script>
+  
+  <script src="data.js"></script>
+  <title>Online Doctor</title>
 </head>
 <body>
-    <label for="symptomInput">Symptom Input</label>
-    <input type="text" id="symptomInput">
-
-    <button id="btn">Submit</button>
+  <header>
+    <h1>Online Doctor</h1>
+  </header>
+  <main>
+    <section class="symptom-form">
+      <h2>Enter Your Symptoms</h2>
+      <form id="symptom-form">
+        <label for="symptoms">Symptoms:</label>
+        <label for="symptomInput">Symptom Input</label>
+        <input type="text" id="symptomInput">
+        <button id="btn">Diagnose</button>
     
+    </section> 
+    <section class="diagnosis-results">
+      <h2>Diagnosis Results</h2>
+      <div id="results"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Online Doctor</p>
+  </footer>
+  <script src="portal.js"></script>
 </body>
 </html>
