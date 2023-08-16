@@ -1,43 +1,64 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let userInput = document.getElementById("symptomInput");
-    let button = document.getElementById("btn");
-    let newArray = [];
-    let symptomList = document.getElementById("symptomList");
+  let symptomContainer = document.getElementById("symptomContainer");
 
-    // Populate the datalist with autocomplete options //Maybe add onchange or oninput or on keyUp
-    Symptoms.forEach(symptom => {
-    let option = document.createElement("option");
-    option.value = symptom;
-    symptomList.appendChild(option);
-  });
-  
-    button.onclick = function (event) {
-      event.preventDefault();
-      newArray = []; // Clear the array before each search
+  // Function to populate suggestions based on user input
+  function populateSuggestions(inputElement, suggestionsElement) {
+    const inputValue = inputElement.value.toLowerCase();
+    const matchedSuggestions = symptoms.filter(symptom => symptom.toLowerCase().startsWith(inputValue));
 
-      let selectedSymptoms = userInput.value.toLowerCase().split(", ");
-      
-      console.log(selectedSymptoms);
-        
-  
-      for (let i = 0; i < disease.length; i++) {
-        for (let j = 0; j < disease[i].symptom.length; j++) {
-          if (userInput.value.toLowerCase().includes(disease[i].symptom[j].toLowerCase())) {
-            newArray.push(disease[i].name);
-            
-            break; // Exit the loop once a match is found for the current disease
-          }
-        
+    suggestionsElement.innerHTML = ""; // Clear existing suggestions
+    for (let suggestion of matchedSuggestions) {
+      const suggestionItem = document.createElement("div");
+      suggestionItem.classList.add("suggestion");
+      suggestionItem.textContent = suggestion;
+      suggestionItem.addEventListener("click", () => {
+        inputElement.value = suggestion;
+        suggestionsElement.innerHTML = "";
+      });
+      suggestionsElement.appendChild(suggestionItem);
+    }
+  }
+
+  // Attach input event listeners to each input field
+  let symptomInputs = symptomContainer.getElementsByClassName("symptom-input");
+  for (let input of symptomInputs) {
+    const suggestionsElement = input.nextElementSibling;
+    input.addEventListener("input", () => {
+      populateSuggestions(input, suggestionsElement);
+    });
+  }
+
+  let button = document.getElementById("btn");
+  let newArray = [];
+
+  button.onclick = function (event) {
+    event.preventDefault();
+    newArray = []; // Clear the array before each search
+
+    let selectedSymptoms = [];
+    let symptomInputs = symptomContainer.getElementsByClassName("symptom-input");
+    for (let input of symptomInputs) {
+      if (input.value.trim() !== "") {
+        selectedSymptoms.push(input.value.toLowerCase());
+      }
+    }
+
+    for (let i = 0; i < disease.length; i++) {
+      let matchedSymptoms = 0; // Track the number of matched symptoms for each disease
+      for (let j = 0; j < disease[i].symptom.length; j++) {
+        if (selectedSymptoms.includes(disease[i].symptom[j].toLowerCase())) {
+          matchedSymptoms++;
         }
       }
-      console.log(newArray);
-  
-      // Store the array of matching diseases in Local Storage
-      localStorage.setItem("newArray", JSON.stringify(newArray));
-      
-      // Redirect to the output.html page
-      window.location.href = "output.html";
-      
-    };
-  });
-  
+      if (matchedSymptoms === selectedSymptoms.length) {
+        newArray.push(disease[i].name);
+      }
+    }
+
+    // Store the array of matching diseases in Local Storage
+    localStorage.setItem("newArray", JSON.stringify(newArray));
+
+    // Redirect to the output.html page
+    window.location.href = "output.html";
+  };
+});

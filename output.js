@@ -14,27 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 */
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   let resultsContainer = document.getElementById("results");
-  
+
   // Retrieve the data from local storage
   const matchingDiseases = localStorage.getItem("newArray");
   const newArray = JSON.parse(matchingDiseases);
 
   if (newArray && newArray.length > 0) {
-      
-      console.log("yes");
-      resultsContainer.textContent = "Matching Diseases: ";
-
-      // Create a list element for each item in newArray and append it to the output container
-      newArray.forEach(item => {
-        const listItem = document.createElement("li");
-        listItem.textContent = item;
-        resultsContainer.appendChild(listItem);
-    });
-    
+    resultsContainer.textContent = "Matching Diseases: " + newArray.join(", ");
   } else {
     resultsContainer.textContent = "No matching diseases found.";
-  } 
-}
-);
+  }
+});

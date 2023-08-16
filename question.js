@@ -27,7 +27,7 @@ questionSubmit.onclick = function(event) {
 
 
     redirect.setAttribute("http-equiv", "refresh");
-    redirect.setAttribute("content", "2;url=Login.html"); 
+    redirect.setAttribute("content", "2;url=portal.html"); 
 
     head.appendChild(redirect);
 

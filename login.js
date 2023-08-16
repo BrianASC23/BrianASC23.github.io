@@ -1,4 +1,12 @@
-/* the window.location.href does not work. */
+//LOGIN BG
+function preload(){
+    backgroundImage = imageLoad("/natureBG.jpg");
+}
+
+function setup(){
+    backgroundImage
+}
+
 
 //LOGIN PAGE 
 let body = document.getElementById("logBody");

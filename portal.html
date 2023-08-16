@@ -8,6 +8,7 @@
   <script src="Diseases.js" defer></script>
   <script src="portal.js" defer></script>
   <title>Ask YourDoctor</title>
+  
 </head>
 <body>
   <header>
@@ -18,21 +19,34 @@
     <section class="symptom-form">
       <h2>Please Write Your Symptoms</h2>
       <form id="symptom-form">
-        <label for="symptomInput">Symptoms:</label>
-        <input type="text" id="symptomInput" placeholder="Enter your symptoms here" list="symptomList">
-        <datalist id="symptomList"></datalist>
-        <button id="btn">Ask Your Doctor</button>
+        <div id="symptomContainer">
+          <!-- Input Container for Symptom 1 -->
+          <div class="input-container">
+            <input type="text" class="symptom-input" placeholder="Enter your symptoms">
+            <div class="suggestions"></div>
+          </div>
+
+          <!-- Input Container for Symptom 2 -->
+          <div class="input-container">
+            <input type="text" class="symptom-input" placeholder="Enter your symptoms">
+            <div class="suggestions"></div>
+          </div>
+
+          <!-- Input Container for Symptom 3 -->
+          <div class="input-container">
+            <input type="text" class="symptom-input" placeholder="Enter your symptoms">
+            <div class="suggestions"></div>
+          </div>
+          
+          <!-- Repeat the above input-container for each symptom -->
+        </div>
+        <button id="btn">Ask Assistant</button>
       </form>
-    </section>
-    <section class="diagnosis-results">
-      <h2>Diagnosis Results</h2>
-      <div id="results"></div>
     </section>
   </main>
   <footer>
-    <p>&copy; 2023 Ask YourDoctor</p>
+    <p>&copy; 2023 CareConnect</p>
   </footer>
-  
   <script src="portal.js"></script>
 </body>
 </html>

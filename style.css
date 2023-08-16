@@ -5,6 +5,9 @@
   background-color: gainsboro;
   margin-right: 1360px;
   border-radius: 20px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
 }
 
 #Home2 a {
@@ -12,15 +15,24 @@
   color: black;
 }
 
+#natureBG{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 .logContain {
   padding: 50px;
   margin-left: 100px;
   margin-right: 100px;
-  background-color: #8AAAE5;
+  background-color: lightgreen;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 50px;
+  position: absolute;
+  top: 20%;
+  left: 35%;
 }
 
 #logindisplay {
@@ -75,6 +87,19 @@
   background-color: lightgreen;
   padding: 20px;
   border: 5px solid green;
+}
+
+.suggestions {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestion {
+  padding: 5px;
+  cursor: pointer;
 }
 
 form {
@@ -215,3 +240,4 @@ button:hover {
     text-decoration: none;
     color:white;
 }
+
