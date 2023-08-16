@@ -1,4 +1,4 @@
-let disease = [
+const disease = [
   {
     "name": "Hypertensive disease",
     "symptom":[
@@ -473,7 +473,6 @@ let disease = [
       "Night sweat",
       "Spontaneous rupture of membranes",
       "Cough",
-      "",
       "Decreased body weight",
       "Chill",
       "Diarrhea",
@@ -492,7 +491,6 @@ let disease = [
       "Night sweat",
       "Spontaneous rupture of membranes",
       "Cough",
-      "",
       "Decreased body weight",
       "Chill",
       "Diarrhea",
@@ -511,7 +509,6 @@ let disease = [
       "Night sweat",
       "Spontaneous rupture of membranes",
       "Cough",
-      "",
       "Decreased body weight",
       "Chill",
       "Diarrhea",
