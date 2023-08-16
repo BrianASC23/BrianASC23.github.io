@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   let symptomContainer = document.getElementById("symptomContainer");
 
-  // Function to populate suggestions based on user input
   function populateSuggestions(inputElement, suggestionsElement) {
     const inputValue = inputElement.value.toLowerCase();
     const matchedSuggestions = symptoms.filter(symptom => symptom.toLowerCase().startsWith(inputValue));
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Attach input event listeners to each input field
   let symptomInputs = symptomContainer.getElementsByClassName("symptom-input");
   for (let input of symptomInputs) {
     const suggestionsElement = input.nextElementSibling;
