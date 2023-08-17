@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function populateSuggestions(inputElement, suggestionsElement) {
     const inputValue = inputElement.value.toLowerCase();
-    const matchedSuggestions = symptoms.filter(symptom => symptom.toLowerCase().startsWith(inputValue));
+    const matchedSuggestions = Symptoms.filter(symptom => symptom.toLowerCase().startsWith(inputValue));
 
     suggestionsElement.innerHTML = ""; // Clear existing suggestions
     for (let suggestion of matchedSuggestions) {
@@ -16,13 +16,27 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       suggestionsElement.appendChild(suggestionItem);
     }
+
+    // Position the suggestions dropdown to the right of the input
+    const inputRect = inputElement.getBoundingClientRect();
+    suggestionsElement.style.top = `${inputRect.top}px`;
+    suggestionsElement.style.left = `${inputRect.right}px`;
   }
 
   let symptomInputs = symptomContainer.getElementsByClassName("symptom-input");
   for (let input of symptomInputs) {
-    const suggestionsElement = input.nextElementSibling;
+    const suggestionsElement = document.createElement("div");
+    suggestionsElement.classList.add("suggestions");
+    input.parentNode.appendChild(suggestionsElement); // Append suggestions div after the input
     input.addEventListener("input", () => {
       populateSuggestions(input, suggestionsElement);
+    });
+
+    // Hide suggestions when clicking outside the input and suggestions
+    document.addEventListener("click", (event) => {
+      if (!input.contains(event.target) && !suggestionsElement.contains(event.target)) {
+        suggestionsElement.innerHTML = "";
+      }
     });
   }
 
