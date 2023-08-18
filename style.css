@@ -4,6 +4,24 @@
     position: absolute;
     top: 8px;
     left: 16px;
+    font-family: 'Comfortaa', cursive;
+
+}
+
+#signUp{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-family: 'Comfortaa', cursive;
+
+}
+
+#signUpDisplay, #Home2Display{
+    text-decoration: none;
+    color:white;
+    padding: 10px;
+    border: 5px solid lightskyblue;
+    border-radius: 15px;
 }
 
 #natureBG{
@@ -25,7 +43,7 @@
     height:50%;
     justify-content: center;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 33%;
 
 
@@ -38,10 +56,12 @@
   padding-left: 50px;
   padding-top: 25px;
   padding-bottom: 25px;
-  border: 5px solid black;
+  border: 5px solid lightskyblue;
   border-radius: 50px;
   border-width: 5px;
   margin: 15px auto;
+  font-family: 'Comfortaa', cursive;
+
   
 }
 
@@ -58,10 +78,22 @@
   transition: all 2s;
   border-color: #2989d8;
   background-color: #2989d8;
+  font-family: 'Comfortaa', cursive;
+
 }
 
 #logbutton:hover {
   cursor: pointer;
+}
+
+#userlabel, #passlabel{
+    font-family: 'Comfortaa', cursive;
+
+}
+
+#username, #password{
+    border: 5px solid lightskyblue;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 320px) {
@@ -82,9 +114,9 @@
 /* Forms */
 
 #form_heading {
-  background-color: lightgreen;
+  background-color: rgb(138, 138, 245);
   padding: 20px;
-  border: 5px solid green;
+  border: 5px solid #2989d8;
 }
 
 .suggestions {
@@ -101,7 +133,7 @@
 }
 
 #questionnaire{
-  background-color: lightsalmon;
+  background-color: lightskyblue;
 }
 
 .questions {

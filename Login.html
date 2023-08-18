@@ -6,25 +6,29 @@
     <title>Login</title>
     <script src="login.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body id="logBody">
     
     <div class="largercontainer">
         <img src="BlueBG.webp" alt="Image loading" id="natureBG">
-        <h1 id="Home2"><a href="index.html">Home</a></h1>
-        
+        <h1 id="Home2"><a href="index.html" id="Home2Display">Home</a></h1>
+        <h2 id="signUp"><a href="sign-up.html" id="signUpDisplay">Sign Up</a></h2>
         <div class="logContain">
             <div>
                 <img id="login-logo" src="ConnectCare Logo.png" alt="logo">
             </div>
             <p id="logindisplay">Login</p>
 
-            <label for="username"> Username</label>
+            <label for="username" id="userlabel"> Username</label>
             <input type="text" id="username" placeholder="Leo">
 
             <br>
 
-            <label for="password">Password</label>
+            <label for="password" id="passlabel">Password</label>
             <input type="text" id="password" placeholder="ABC123">
 
             <br>
